@@ -70,3 +70,4 @@ package-lock.json
 
 *.spell
 *.bin
+vocabulary_extract_basic.txt
