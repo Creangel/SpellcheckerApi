@@ -104,12 +104,12 @@ def active(request):
 	return HttpResponse('Servicio activo')
 
 def handler404(request, *args, **argv):
-	response = render(request,'base/404.html', {})
+	response = render(request,'/opt/spellchecker/templates/base/404.html', {})
 	response.status_code = 404
 	return response
 
 def handler500(request, *args, **argv):
-	response = render(request,'base/500.html', {})
+	response = render(request,'/opt/spellchecker/templates/base/500.html', {})
 	response.status_code = 500
 	return response
 	
@@ -143,7 +143,7 @@ def downloadContent(searchEngineId):
 		if(portSolr):
 			pathSolr='http://'+ipSolr+':'+portSolr+"/solr/"+coreSolr
 		else:
-			pathSolr='http://'+ipSolr+":8089/solr/"+coreSolr
+			pathSolr='http://'+ipSolr+"/solr/"+coreSolr
 			
 		pathCount = pathSolr+"/select?q=content%3A%5B*%20TO%20*%5D&rows=0"
 		logging.info(pathCount)
